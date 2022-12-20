@@ -211,7 +211,7 @@ section.valid input {
 
 section>ul>li.options {
 	display: flex;
-	flex-direction: column;
+	/* flex-direction: column; */
 	justify-content: space-around;
 	align-items: center;
 	gap: 1em;
