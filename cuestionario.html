@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+      <title>Cuestionario</title>
+      <link rel="stylesheet" href="miestilo.css">
+      <link rel="shortcut icon" href="ESCOM.jpg" type="image/x-icon">
+      <script src="./cuestionario.js"></script>
+</head>
+
+<body onload="addOnChangeEvent()">
+      <!-- Header del sitio -->
+      <header>
+            <h1>Inventario de la Motivación Personal</h1>
+            <!-- Menú de navegación del sitio -->
+            <nav>
+                  <li><a href="index.html">Inicio</a></li>
+                  <li><a href="cuestionario.html">Inventario de la Motivación Personal</a></li>
+            </nav>
+      </header>
+      <!-- Contenido principal -->
+      <form method="post" action="./resultados.html">
+            <input id="data" name="data" hidden />
+            <main>
+                  <section>
+                        <div class="header">
+                              <h3> PREGUNTA 1: </h3>
+                              Me siento mejor con los demás cuando…
+                        </div>
+                        <ul>
+                              <li class="options">
+                                    <span>
+                                          Los dirijo.
+                                    </span>
+                                    <input type="number" />
+                              </li>
+                              <li class="options"><span>Me acemptan. </span><input type="number" />
+                              </li>
+                              <li class="options"><span>Aprendo algo de ellos. </span><input type="number" />
+                              </li>
+                        </ul>
+
+                  </section>
+
+                  <section>
+                        <div class="header">
+                              <h3> PREGUNTA 2: </h3>
+                              Obtengo la mejor parte para mí siendo…
+                        </div>
+                        <ul>
+                              <li class="options"><span>Oportunista. </span><input type="number" />
+                              </li>
+
+                              <li class="options"><span>Amistoso. </span><input type="number" />
+                              </li>
+
+                              <li class="options"><span>Congruente conmigo. </span><input type="number" />
+                              </li>
+                        </ul>
+
+                  </section>
+
+                  <section>
+                        <div class="header">
+                              <h3> PREGUNTA 3: </h3>
+                              Me siento bien conmigo mismo cuándo…
+                        </div>
+                        <ul>
+                              <li class="options"><span>Busco ser líder. </span><input type="number" />
+                              </li>
+
+                              <li class="options"><span>Me adapto al grupo. </span><input type="number" />
+                              </li>
+
+                              <li class="options"><span>Actúo por un ideal. </span><input type="number" />
+                              </li>
+                        </ul>
+
+                  </section>
+
+                  <section>
+                        <div class="header">
+                              <h3> PREGUNTA 4: </h3>
+                              Yo me esfuerzo más cuando…
+                        </div>
+                        <ul>
+                              <li class="options"><span>Hay dinero de por medio.</span><input type="number" />
+                              </li>
+
+                              <li class="options"><span>Reconocen mi esfuerzo. </span><input type="number" />
+                              </li>
+
+                              <li class="options"><span>Me gusta lo que hay que hacer. </span><input type="number" />
+                              </li>
+                        </ul>
+
+                  </section>
+
+                  <section>
+                        <div class="header">
+                              <h3> PREGUNTA 5: </h3>
+                              Al relacionarme con otros pienso en…
+                        </div>
+                        <ul>
+                              <li class="options"><span>La influencia que tienen. </span><input type="number" />
+                              </li>
+
+                              <li class="options"><span>En la confianza que me tienen.</span><input type="number" />
+                              </li>
+
+                              <li class="options"><span>En lo que significa para mi desarrollo. </span><input
+                                          type="number" />
+                              </li>
+                        </ul>
+
+                  </section>
+
+                  <section>
+                        <div class="header">
+                              <h3> PREGUNTA 6: </h3>
+                              Me da más miedo…
+                        </div>
+                        <ul>
+                              <li class="options"><span>La pobreza. </span><input type="number" />
+                              </li>
+
+                              <li class="options"><span>La soledad. </span><input type="number" />
+                              </li>
+
+                              <li class="options"><span>La falta de sentido de la vida. </span><input type="number" />
+                              </li>
+                        </ul>
+
+                  </section>
+
+                  <section>
+                        <div class="header">
+                              <h3> PREGUNTA 7: </h3>
+                              Impresiono a otros presentándome como…
+                        </div>
+                        <ul>
+                              <li class="options"><span>Una persona astuta y audaz. </span><input type="number" />
+                              </li>
+
+                              <li class="options"><span>Cariñosa y comprometida. </span><input type="number" />
+                              </li>
+
+                              <li class="options"><span>Culta e inteligente. </span><input type="number" />
+                              </li>
+                        </ul>
+
+                  </section>
+
+                  <section>
+                        <div class="header">
+                              <h3> PREGUNTA 8: </h3> Frente al fracaso yo…
+                        </div>
+                        <ul>
+                              <li class="options"><span>Me siento lesionado en mis derechos. </span><input
+                                          type="number" />
+                              </li>
+
+                              <li class="options"><span>Busco consuelo en los demas. </span><input type="number" />
+                              </li>
+
+                              <li class="options"><span>Busco una explicacion que me ayude a mejorar.
+                                    </span><input type="number" />
+                              </li>
+                        </ul>
+
+                  </section>
+
+                  <section>
+                        <div class="header">
+                              <h3> PREGUNTA 9: </h3>
+                              Lo que más disfruto es (son)…
+                        </div>
+                        <ul>
+                              <li class="options"><span>Los éxitos económicos. </span><input type="number" />
+                              </li>
+
+                              <li class="options"><span>La compañia de mi familia. </span><input type="number" />
+                              </li>
+
+                              <li class="options"><span>Los logros profesionales. </span><input type="number" />
+                              </li>
+                        </ul>
+
+                  </section>
+
+                  <section>
+                        <div class="header">
+                              <h3> PREGUNTA 10: </h3>
+                              Para vencer las dificultades yo…
+                        </div>
+                        <ul>
+                              <li class="options"><span>Uso toda mi fuerza. </span><input type="number" />
+                              </li>
+
+                              <li class="options"><span>Necesito ayuda de los demas. </span><input type="number" />
+                              </li>
+
+                              <li class="options"><span>Apelo a mi formacion interior. </span><input type="number" />
+                              </li>
+                        </ul>
+
+                  </section>
+
+
+                  <div id="button-div">
+                        <input id="submit" disabled="false" type="submit" value="Enviar respuestas" />
+                  </div>
+            </main>
+      </form>
+      <footer>
+            <h4 class="right">
+                  <ol>
+                        <li>Cruz Chávez Erick</li>
+                        <li>Mexicano Ixtepan</li>
+                        <li>Ruiz Vazquez Luis Armando</li>
+                  </ol>
+                  <p>
+                        4CM3
+                  </p>
+            </h4>
+      </footer>
+</body>
+
+</html>
