@@ -22,7 +22,7 @@ $max = max($decoded['a'], $decoded['b'], $decoded['c']);
         <!-- Menú de navegación del sitio -->
         <nav>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="cuestionario.html">Inventario de la Motivación Personal</a></li>
+            <li><a href="instrucciones.html">Inventario de la Motivación Personal</a></li>
         </nav>
     </header>
     <!-- Contenido principal -->
