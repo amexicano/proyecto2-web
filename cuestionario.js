@@ -2,7 +2,7 @@ const correctSum = 10
 const sectionObjects = []
 
 function addOnChangeEvent() {
-    const sections = document.querySelectorAll("section");
+    const sections = document.querySelectorAll("section.pregunta");
 
     sections.forEach((sec, i) => {
         const inputs = sec.querySelectorAll("input")
@@ -38,7 +38,6 @@ function addOnChangeEvent() {
                     this.setStyle(sum)
 
                 })
-
                 return sum == correctSum
             },
             setStyle(sum) {
@@ -56,11 +55,24 @@ function addOnChangeEvent() {
 
 function checkValidity() {
     let valid = true
-    let results = [];
+    let resultsSum = {
+        a: 0,
+        b: 0,
+        c: 0
+    };
     sectionObjects.forEach(sec => {
         if (!sec.validate()) valid = false;
-        results.push(sec.results);
+        resultsSum.a += sec.results.a;
+        resultsSum.b += sec.results.b;
+        resultsSum.c += sec.results.c;
     })
-    document.getElementById('data').value = JSON.stringify(results);
+
+    let total = resultsSum.a + resultsSum.b + resultsSum.c;
+    let percentages = {
+        a: resultsSum.a * 100 / total,
+        b: resultsSum.b * 100 / total,
+        c: resultsSum.c * 100 / total,
+    }
+    document.getElementById('data').value = JSON.stringify(percentages);
     document.getElementById('submit').disabled = valid ? false : true
 }

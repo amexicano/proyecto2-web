@@ -17,9 +17,6 @@ body {
 	background-color: #1abc9c;
 }
 
-section>div.header>h3 {
-	display: inline-block;
-}
 
 header {
 	padding: .25em 1.5em;
@@ -43,8 +40,6 @@ main {
 	flex-direction: column;
 	gap: 1em;
 	margin: 6.5em 5em 0 5em;
-	/* margin-top: 3em;
-	margin-bottom: 5em; */
 	background: #FFF;
 	padding: 1em;
 	box-shadow: 0 0 .5em rgba(0, 0, 0, .5);
@@ -53,9 +48,6 @@ main {
 
 section {
 	padding: 1em;
-	background: #6874E8;
-	color: #E8F0FF;
-	text-align: center;
 	box-shadow: 0 0 .25em rgba(122, 92, 97, 0.5);
 }
 
@@ -165,17 +157,22 @@ ol {
 }
 
 .options {
-	margin: 5px 0px;
-	padding: 5px;
+	margin: 0;
+	padding: 0;
+}
+
+input {
+	margin: 0;
+	padding: 0;
+	height: 1em;
+	width: 4em;
 }
 
 .options input {
 	float: right;
-	background-color: #F7ACCF;
 	border: none;
 	text-align: center;
 }
-
 
 section.invalid input {
 	color: white;
@@ -200,6 +197,11 @@ section.valid input {
 
 .two-column {
 	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.two-column-section {
+	display: grid;
 	grid-template-columns: 2fr 5fr;
 }
 
@@ -211,13 +213,22 @@ section.valid input {
 
 section>ul>li.options {
 	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	align-items: center;
-	gap: 1em;
 }
 
 section>img {
 	display: block;
 	margin: 0 auto;
+}
+
+.three-column {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: .4em;
+}
+
+.pregunta {
+	/* Pon en negritas las letras */
+	font-weight: bold;
 }
