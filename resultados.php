@@ -1,6 +1,7 @@
 <?php 
 $data = $_POST["data"];
 $decoded = json_decode($data, true);
+$max = max($decoded['a'], $decoded['b'], $decoded['c']);
 ?>
 <html lang="en">
 
@@ -25,37 +26,36 @@ $decoded = json_decode($data, true);
         </nav>
     </header>
     <!-- Contenido principal -->
-    <main class="two-column">
-        <section>
-            <h3 id="A">Poder(A): <?php echo $decoded['a']?>%</h3>
-            <h3 id="B">Afiliacion(B): <?php echo $decoded["b"]?>%</h3>
-            <h3 id="C">Superación Personal(C): <?php echo $decoded["c"]?>%</h3>
-        </section>
+    <main>
         <section>
             <h1>Resultado</h1>
             <div style="background-color: white;">
                 <canvas id="marksChart" width="500" height="400"></canvas>
             </div>
-            <h1>Personas Motivadas por Poder (A) </h1>
-            <hr>
-            <p>
-            <ol>
-                <li> Trabajos que les permiten persuadir a la gente.</li>
+            <?php if ($max == $decoded['a']) {
+                echo "
+                <div>
+                    
+                <h1>Personas Motivadas por Poder (A) </h1>
+                <hr>
+                <p>
+                    <ol class='two-column'>
+                        <li> Trabajos que les permiten persuadir a la gente.</li>
                 <li> Responsabilidades que les permiten relacionarse con los directivos más altos.</li>
                 <li> Tareas que les da la oportunidad de enseñar.</li>
                 <li> Reconocimientos que tienen una base muy amplia (por ejemplo: utilizando los medios de comunicación)
                     y que son visibles por personas que tienen influencia en la organización. </li>
-                <li> Nombramientos que reconocen sus logros y influencia en la organización.</li>
-                <li> Cartas a familiares enfatizando su impacto para beneficiar a la institución, los clientes, y la
-                    comunidad. </li>
-                <li> Trabajos que ofrecen mayor responsabilidad y autoridad.</li>
-                <li> Una descripción de trabajo y nombre de puesto que impresionan.</li>
-                <li> Notas personalizadas del supervisor y altos directivos agradeciendo su aportación para mejorar la
-                    comunidad y la condición humana.</li>
-                <li> Un programa que lleve su nombre.</li>
-                <li> Oportunidad para aportar en el establecimiento de las metas organizacionales.</li>
-                <li> Oportunidad para innovar, cuestionar y debatir las decisiones.</li>
-                <li> Permitir que sus ideas se expresen.</li>
+                    <li> Nombramientos que reconocen sus logros y influencia en la organización.</li>
+                    <li> Cartas a familiares enfatizando su impacto para beneficiar a la institución, los clientes, y la
+                        comunidad. </li>
+                        <li> Trabajos que ofrecen mayor responsabilidad y autoridad.</li>
+                    <li> Una descripción de trabajo y nombre de puesto que impresionan.</li>
+                    <li> Notas personalizadas del supervisor y altos directivos agradeciendo su aportación para mejorar la
+                        comunidad y la condición humana.</li>
+                        <li> Un programa que lleve su nombre.</li>
+                        <li> Oportunidad para aportar en el establecimiento de las metas organizacionales.</li>
+                        <li> Oportunidad para innovar, cuestionar y debatir las decisiones.</li>
+                        <li> Permitir que sus ideas se expresen.</li>
                 <li> Presentarlas a personas con influencia.</li>
                 <li> Oportunidades para negociar.</li>
                 <li> Oportunidades para vender los servicios de la organización.</li>
@@ -70,11 +70,17 @@ $decoded = json_decode($data, true);
                 <li> Oportunidades para ser autor de algún artículo, libro o publicación.</li>
                 <li> Nombrar al consejo directivo de alguna institución.</li>
             </ol>
-            </p>
-            <h1>Personas Motivadas por Afiliación (B)</h1>
-            <hr>
-            <p>
-            <ol>
+        </p>
+    </div>";
+            }
+    ?>
+            <?php if ($max == $decoded['b']) {
+                echo "
+    <div>
+        <h1>Personas Motivadas por Afiliación (B)</h1>
+        <hr>
+        <p>
+            <ol class='two-column'>
                 <li> Reconocimiento en presencia de colegas y miembros de la familia.</li>
                 <li> Mención en el boletín o comunicación de la organización.</li>
                 <li> Su nombre y/o fotografía en un área pública de la organización.</li>
@@ -93,10 +99,17 @@ $decoded = json_decode($data, true);
                 <li> Oportunidades de saludar, dar una introducción o bienvenida en eventos especiales.</li>
             </ol>
             </p>
+        </div>
+        ";
+            }
+        ?>
+            <?php if ($max == $decoded['c']) {
+                echo "
+        <div>
             <h1>Personas Motivadas por Realizacion Personal(C)</h1>
             <hr>
             <p>
-            <ol>
+            <ol class='two-column'>
                 <li> Oportunidades para participar en decisiones acerca de metas.</li>
                 <li> Tener toda la responsabilidad delegada a ellos, y la habilidad de manejarla a su propio paso.</li>
                 <li> Oportunidad para crear ideas innovadoras y de lograr sus metas.</li>
@@ -127,6 +140,10 @@ $decoded = json_decode($data, true);
                 <li> Poner algún distintivo en su gafete indicando la antigüedad que tiene en la organización.</li>
             </ol>
             </p>
+        </div>
+        ";
+            }
+        ?>
         </section>
     </main>
     <footer class="relative-footer">
@@ -146,7 +163,7 @@ $decoded = json_decode($data, true);
         var marksCanvas = document.getElementById("marksChart");
 
         var marksData = {
-            labels: ["Poder(A)", "Afiliacion(B)", "Superacion Personal(C)"],
+            labels: ["Poder(A) <?php echo $decoded['a']?>%", "Afiliacion(B) <?php echo $decoded["b"]?>%", "Superacion Personal(C) <?php echo $decoded["c"]?>%"],
             datasets: [{
                 label: "Resultado Motivaciones",
                 data: [data.a, data.b, data.c],
