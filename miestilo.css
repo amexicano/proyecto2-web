@@ -216,3 +216,8 @@ section>ul>li.options {
 	align-items: center;
 	gap: 1em;
 }
+
+section>img {
+	display: block;
+	margin: 0 auto;
+}
